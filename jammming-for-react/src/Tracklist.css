@@ -1,0 +1,18 @@
+.add-track-style {
+    background-color: white;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url("./add-track.png");
+    background-size: cover;
+}
+
+.track {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+#album-image {
+    border: 1px solid black;
+}

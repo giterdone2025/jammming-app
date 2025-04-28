@@ -1,0 +1,13 @@
+#search-section {
+    background-color: #790AA4;
+    color: white;
+    width: 400px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 25px;
+
+}
+
+#search-section h2 {
+    font-weight: 700;
+}

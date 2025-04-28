@@ -1,0 +1,30 @@
+#flex-playlist {
+    display: flex;
+    flex-direction: column;
+    background-color: #790AA4;
+    color: white;
+    width: 400px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+#playlist-name-input-style {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel-button {
+    background-image: url("./cancel-track.png");
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+}
+
+.playlist-track {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
