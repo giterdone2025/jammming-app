@@ -1,3 +1,6 @@
+
+// Imports needed to display the list of tracks as a result of the user's search input.
+
 import React from 'react';
 import Tracklist from "./Tracklist";
 import SearchBar from "./SearchBar";
@@ -5,8 +8,6 @@ import './SearchResults.css';
 
 
 function SearchResults(props) {
-
-    //const [result, setResults] = useState([]);
 
     return(
         <div>

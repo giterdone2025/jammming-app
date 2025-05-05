@@ -1,3 +1,6 @@
+
+// Imports needed for how each track should look as rendered when displayed on the app.
+
 import React from 'react';
 import './Track.css';
 

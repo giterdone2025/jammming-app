@@ -1,10 +1,18 @@
+
+// Imports needed to render and style <App/>
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
+/*
+*
+* This is how div element with id as 'root' is linked to
+* render <App/>
+*
+* */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,12 +1,25 @@
 
+// Declaring and initializing variables here so that it can be
+// used in all the functions in Spotify.js.
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
-const redirectUrl = 'http://localhost:3000/';
+const redirectUrl = 'http://localhost:3000/callback';
 
 const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 let accessToken;
 let refreshToken;
 const TOKEN = 'https://accounts.spotify.com/api/token';
+
+/*
+ *
+ * Beginning of the process of authorization and getting the access token
+ * after granted authorization using the following functions:
+ *
+ * getCode, onPageLoad, handleRedirect, handleAuthorizationResponse, callAuthorizationApi, fetchAccessToken
+ *
+ * I watched this YouTube video from the link below to implement the authorization feature
+ *     https://www.youtube.com/watch?v=1vR3m0HupGI&list=LL&index=3&t=398s
+ */
 
 function getCode() {
     let code = null;
@@ -60,6 +73,7 @@ function callAuthorizationApi(body) {
 }
 
 function fetchAccessToken(code) {
+
     let body = 'grant_type=authorization_code';
     body += '&code=' + code;
     body += '&redirect_uri=' + encodeURI(redirectUrl);
@@ -67,6 +81,15 @@ function fetchAccessToken(code) {
     body += 'client_secret=' + clientSecret;
     callAuthorizationApi(body);
 }
+
+/*
+ *
+ * Beginning of class, Spotify, which has three functions:
+ *     getAccessToken - Gets the access token which includes asking the user for authorization
+ *     search - Calls Spotify API to GET the list of song tracks based on user input
+ *     savePlaylist - Calls Spotify API to POST the user's custom playlist to their account
+ *
+ */
 
 const Spotify = {};
 
@@ -90,10 +113,10 @@ Spotify.getAccessToken = async (code) => {
         url += '?response_type=token';
         url += '&client_id=' + clientId;
         url += '&client_secret=' + clientSecret;
-        url += '&scope=' + scope;
         url += '&redirect_uri=' + encodeURI(redirectUrl);
         url += '&code=' + code;
         url += '&show_dialog=true';
+        url += '&scope=' + scope;
 
         window.location = url;
 
@@ -101,7 +124,7 @@ Spotify.getAccessToken = async (code) => {
 }
 
 Spotify.search = (term) => {
-        //const accessToken = Spotify.getAccessToken();
+
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -128,7 +151,6 @@ Spotify.savePlaylist = (name, trackUris) => {
             return;
         }
 
-        // const accessToken = Spotify.getAccessToken();
         const headers = { 'Authorization': `Bearer ${accessToken}` };
         const headersForPost = { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' };
         let userId;

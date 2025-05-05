@@ -23,3 +23,7 @@ h1 {
 #color-letters {
   color: #C853F5;
 }
+
+button {
+  cursor: pointer;
+}
