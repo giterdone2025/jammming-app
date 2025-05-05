@@ -15,7 +15,7 @@ If users need to create and save their own playlist to their Spotify profile, th
 
 ### Technical Design
 
-[Search Track Part One](search-tracks-1.png "Search Tracks Part One")
+![Search Track Part One](search-tracks-1.png "Search Tracks Part One")
 
 ### Caveats
 
