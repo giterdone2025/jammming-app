@@ -18,8 +18,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <div id="message">
-          <h4>This app, Jammming, was made for a wider screen like desktops instead of smaller screens like phones or tablets.</h4>
-          <h5>If you have a desktop, please widen this window.</h5>
+          <h4>This app, Jammming, was made for a wider screen like desktops instead of smaller screens like phones.</h4>
+          <h5>If you have a desktop, please widen this window. Or if you have a tablet, you may need to turn the screen around.</h5>
       </div>
     <App />
   </React.StrictMode>
