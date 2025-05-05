@@ -13,6 +13,14 @@ If users need to create and save their own playlist to their Spotify profile, th
 -	Execute lines of code to begin GET request API call when the user clicks the search button.
 -	Execute GET request API call to retrieve all the song tracks based on input value. 
 
-## Search Tracks
+### Technical Design
+
+[Search Track Part One](search-tracks-1.png "Search Tracks Part One")
+
+### Caveats
+
+
+
+## 
 
 
