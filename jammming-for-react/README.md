@@ -15,16 +15,41 @@ If users need to create and save their own playlist to their Spotify profile, th
 
 ### Technical Design
 
+At the beginning, I created the following React components to implement this feature: App, SearchResults, SearchBar, and Tracklist.
+
+
 <img src="search-tracks-1.png" width="500" height="200">
+
+
 
 <img src="search-tracks-2.png" width="500" height="200">
 
+
+
 <img src="search-tracks-3.png" width="500" height="750">
+
+Summary of the technical design:
+-	Create a function, onChange, in <SearchBar/> to change the value of the user input as the user is typing a term or keyword in the search bar.
+-	Pass in the onSearch function and the “tracks” variable as props to the React components <SearchResults/> and <SearchBar/> to make the GET request for song tracks based on user input.
+-	Implement <Tracklist/> to display all the song tracks stored in the variable “tracks.”
 
 ### Caveats
 
 
 
-## 
+## Save Playlist Feature
 
+### The Objective
+
+
+
+### Requirements/Background
+
+
+
+### Technical Design
+
+
+
+### Caveats
 
