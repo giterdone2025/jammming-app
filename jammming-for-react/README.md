@@ -17,6 +17,8 @@ If users need to create and save their own playlist to their Spotify profile, th
 
 <img src="search-tracks-1.png" width="500" height="200">
 
+<img src="search-tracks-2.png" width="500" height="200">
+
 ### Caveats
 
 
