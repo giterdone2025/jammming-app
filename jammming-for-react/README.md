@@ -25,7 +25,7 @@ Then, I passed the *onSearch* function into *SearchBar* as a prop, and in *Searc
 
 <img src="search-tracks-2.png" width="500" height="200">
 
-
+After *search* is called, the program calls *onSearch* which points all the way back to *App.js* where search as a callback function was initially declared and it executes *Spotify.search* from *Spotify.js*. 
 
 <img src="search-tracks-3.png" width="500" height="750">
 
