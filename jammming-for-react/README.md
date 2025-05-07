@@ -17,17 +17,19 @@ If users need to create and save their own playlist to their Spotify profile, th
 
 At the beginning, I created the following React components to implement this feature: *App, SearchResults, SearchBar, and Tracklist*.
 
-In *App.js*, we want to pass the following functions/variables as props to SearchResults: *search, addTrack, and tracks*. Inside of *SearchResults.js*, a div element is rendered which consists another div element sectioning the part where the user gives input to the *SearchBar* to find a list of tracks based on the input. 
+In *App.js*, we want to pass the following functions/variables as props to SearchResults: *search, addTrack, and tracks*. Inside of *SearchResults.js*, a div element is rendered which consists: another div element sectioning the part where the user gives input to the *SearchBar* to find a list of tracks based on the input and a Tracklist below the second div element which displays the list of songs after submission of the input. 
 
 <img src="search-tracks-1.png" width="500" height="200">
 
-
+Then, I passed the *onSearch* function into *SearchBar* as a prop, and in *SearchBar.js*, the *onSearch* is utilized in a callback function assigned to *search*. Within this function, *onSearch* takes the value from the input element as an argument and the input value changes in every character typed by the user which is executed in the *onChange* function in the file. In order for *search* to be called and executed, the user has to click the button, "Search," which *onClick* is an attribute of this button element to call *search*.
 
 <img src="search-tracks-2.png" width="500" height="200">
 
 
 
 <img src="search-tracks-3.png" width="500" height="750">
+
+For more insight on the functions and variables used for this feature, take a look at the source code to view comments explaining the code.
 
 Summary of the technical design:
 -	Create a function, onChange, in <SearchBar/> to change the value of the user input as the user is typing a term or keyword in the search bar.
