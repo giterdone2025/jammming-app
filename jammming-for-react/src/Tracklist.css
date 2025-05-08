@@ -16,3 +16,10 @@
 #album-image {
     border: 1px solid black;
 }
+
+@media only screen and (max-width: 500px) {
+    .add-track-style {
+        height: 20px;
+        width: 20px;
+    }
+}

@@ -11,3 +11,11 @@
 #search-section h2 {
     font-weight: 700;
 }
+
+@media only screen and (max-width: 500px) {
+    #search-section {
+        width: 300px;
+        height: 75px;
+        padding: 40px 10px;
+    }
+}
