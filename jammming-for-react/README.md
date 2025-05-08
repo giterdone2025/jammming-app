@@ -1,6 +1,6 @@
 # Jammming App Demo
 
-## Search Tracks Feature
+## Proposed Idea for this App: Search Podcast Episodes Feature
 
 ### The Objective
 
@@ -8,11 +8,11 @@ The goal for this project is to develop a feature which allows Spotify users to 
 
 ### Requirements/Background
 
-If users need to create and save their own playlist to their Spotify profile, there needs to be a feature to search songs by user input and the use of the API. Using the documentation on the Spotify API calls with code snippets, I implemented the following tasks for the feature:
+Similarly to searching song tracks as its own feature, if users need to create and save their own podcasts episodes as a playlist to their Spotify profile, there needs to be a feature to search podcasts episodes by user input and the use of the API. Using the documentation on the Spotify API calls with code snippets, I implemented the following tasks for the feature:
 
 -	Allow the value of the search bar to update every letter typed by the user as input.
 -	Execute lines of code to begin GET request API call when the user clicks the search button.
--	Execute GET request API call to retrieve all the song tracks based on input value. 
+-	Execute GET request API call to retrieve all the podcasts episodes based on input value. 
 
 ### Technical Design
 
@@ -20,11 +20,7 @@ At the beginning, I created the following React components to implement this fea
 
 In *App.js*, we want to pass the following functions/variables as props to SearchResults: *search, addTrack, and tracks*. Inside of *SearchResults.js*, a div element is rendered which consists: another div element sectioning the part where the user gives input to the *SearchBar* to find a list of tracks based on the input and a Tracklist below the second div element which displays the list of songs after submission of the input. 
 
-<img src="search-tracks-1.png" width="500" height="200">
-
 Then, I passed the *onSearch* function into *SearchBar* as a prop, and in *SearchBar.js*, the *onSearch* is utilized in a callback function assigned to *search*. Within this function, *onSearch* takes the value from the input element as an argument and the input value changes in every character typed by the user which is executed in the *onChange* function in the file. In order for *search* to be called and executed, the user has to click the button, "Search," which *onClick* is an attribute of this button element to call *search*.
-
-<img src="search-tracks-2.png" width="500" height="200">
 
 After *search* is called, the program calls *onSearch* which points all the way back to *App.js* where search as a callback function was initially declared and it executes *Spotify.search* from *Spotify.js*. Now, we're going to explore what happens in *Spotify.search* looking at the function in *Spotify.js*. 
 
@@ -37,8 +33,6 @@ Back to the callback function in *App.js*, array of objects is returned as a Pro
 - In *Tracklist.js*, *.map()* is executed to loop through every object in *tracks* to render every song track by using img element with the source as *track.image*, *Track* with *track.name*, *track.artist*, and *track.album* as props of this component, and a button element for the user to click on it if the user wants to add it to the playlist (more on that later for the saving a playlist feature).
 - Every *Track* is rendered using the props. How *Track* is rendered in *Track.js*, the div element includes an h3 element for the title of the song and an h6 element for the album and artist's name.
 
-<img src="search-tracks-3.png" width="500" height="750">
-
 For more insight on the functions and variables used for this feature, take a look at the source code to view comments explaining the code.
 
 Summary of the technical design:
@@ -49,21 +43,4 @@ Summary of the technical design:
 
 ### Caveats
 
-
-
-## Save Playlist Feature
-
-### The Objective
-
-
-
-### Requirements/Background
-
-
-
-### Technical Design
-
-
-
-### Caveats
 
