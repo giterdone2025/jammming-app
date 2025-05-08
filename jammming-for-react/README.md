@@ -9,6 +9,7 @@ The goal for this project is to develop a feature which allows Spotify users to 
 ### Requirements/Background
 
 If users need to create and save their own playlist to their Spotify profile, there needs to be a feature to search songs by user input and the use of the API. Using the documentation on the Spotify API calls with code snippets, I implemented the following tasks for the feature:
+
 -	Allow the value of the search bar to update every letter typed by the user as input.
 -	Execute lines of code to begin GET request API call when the user clicks the search button.
 -	Execute GET request API call to retrieve all the song tracks based on input value. 
@@ -25,13 +26,23 @@ Then, I passed the *onSearch* function into *SearchBar* as a prop, and in *Searc
 
 <img src="search-tracks-2.png" width="500" height="200">
 
-After *search* is called, the program calls *onSearch* which points all the way back to *App.js* where search as a callback function was initially declared and it executes *Spotify.search* from *Spotify.js*. Now, we're going to explore what happens in *Spotify.search* looking at the function in *Spotify.js*. In *Spotify.search*, it uses one parameter named *term* which represents the value of the user's input to search for song tracks. This function returns a Promise value by fetching "'https://api.spotify.com/v1/search?type=track&q=${term}'" to GET the song tracks while the *headers* in this call is assigned to the following: "{Authorization: 'Bearer ${accessToken}'}". The variable, *accessToken*, represents the token to access information from Spotify API after the user is granted authorization. Afterwards, *.then()* is called which returns *response.json()* and another *.then()* is called which uses the JSON response to return an array of objects which every object is a song track itself with the following properties: *id*, *name*, *artist*, *album*, *image*, and *uri*.
+After *search* is called, the program calls *onSearch* which points all the way back to *App.js* where search as a callback function was initially declared and it executes *Spotify.search* from *Spotify.js*. Now, we're going to explore what happens in *Spotify.search* looking at the function in *Spotify.js*. 
+
+In *Spotify.search*, it uses one parameter named *term* which represents the value of the user's input to search for song tracks. This function returns a Promise value by fetching "'https://api.spotify.com/v1/search?type=track&q=${term}'" to GET the song tracks while the *headers* in this call is assigned to the following: "{Authorization: 'Bearer ${accessToken}'}". The variable, *accessToken*, represents the token to access information from Spotify API after the user is granted authorization. Afterwards, *.then()* is called which returns *response.json()* and another *.then()* is called which uses the JSON response to return an array of objects, using the array function .map(), which every object is a song track itself with the following properties: *id*, *name*, *artist*, *album*, *image*, and *uri*. 
+
+Back to the callback function in *App.js*, array of objects is returned as a Promise and *.then()* is called to execute *setTracks* to assign the array of objects to *tracks*. As soon as tracks is set with this array of objects, or song track objects if you want to call them that way, *Tracklist* is rendered with the list of song tracks by the following ways:
+
+- Pass *tracks* back into *SearchResults* as a prop.
+- *tracks*, as a prop in *SearchResults.js*, is then passed into *Tracklist* as a prop in this component.
+- In *Tracklist.js*, *.map()* is executed to loop through every object in *tracks* to render every song track by using img element with the source as *track.image*, *Track* with *track.name*, *track.artist*, and *track.album* as props of this component, and a button element for the user to click on it if the user wants to add it to the playlist (more on that later for the saving a playlist feature).
+- Every *Track* is rendered using the props. How *Track* is rendered in *Track.js*, the div element includes an h3 element for the title of the song and an h6 element for the album and artist's name.
 
 <img src="search-tracks-3.png" width="500" height="750">
 
 For more insight on the functions and variables used for this feature, take a look at the source code to view comments explaining the code.
 
 Summary of the technical design:
+
 -	Create a function, onChange, in <SearchBar/> to change the value of the user input as the user is typing a term or keyword in the search bar.
 -	Pass in the onSearch function and the “tracks” variable as props to the React components <SearchResults/> and <SearchBar/> to make the GET request for song tracks based on user input.
 -	Implement <Tracklist/> to display all the song tracks stored in the variable “tracks.”
