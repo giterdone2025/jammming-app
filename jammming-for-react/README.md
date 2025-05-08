@@ -4,7 +4,7 @@
 
 ### The Objective
 
-The goal for this project is to develop a feature which allows Spotify users to search song tracks from Spotify’s API and presents a track list based on the input for search.
+Right now, the app is built to search for song tracks only rather than search for podcasts episodes on Spotify. Therefore, the goal for this project is to develop a feature which allows Spotify users to search podcasts episodes from Spotify’s API and presents a track list of the episodes based on the input for search.
 
 ### Requirements/Background
 
@@ -42,5 +42,7 @@ Summary of the technical design:
 -	Implement <Tracklist/> to display all the episodes stored in the variable “tracks.”
 
 ### Caveats
+
+#### Create another page within the app for searching podcasts episodes and adding them to a custom playlist
 
 
