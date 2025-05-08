@@ -45,4 +45,4 @@ Summary of the technical design:
 
 #### Create another page within the app for searching podcasts episodes and adding them to a custom playlist
 
-
+If this technical design of the proposed feature becomes more challenging than expected to implement, I can create another page within this app where it works exactly like searching for song tracks except it only focuses on searching podcasts episodes and adding them to a custom playlist for the user's Spotify account. Therefore, a navigation bar will be required for implementation for the user to navigate from one page to the other. However, it is possible that the user may lose progress of adding songs to the playlist, so there must be a way to design the React app to save the custom playlist and carry it over to the other page while avoiding to save it automatically to the user's account. For better implementation, this design may require more back-end development if we want it to save the custom playlist to a database.
