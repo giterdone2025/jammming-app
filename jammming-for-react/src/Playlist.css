@@ -33,6 +33,20 @@
     #flex-playlist {
         width: 300px;
         height: 75px;
-        padding: 40px 10px;
+        padding: 0;
     }
+
+    #flex-playlist h2 {
+        font-size: 15px;
+    }
+
+    #playlist-name-input-style input {
+        width: 125px;
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+
 }

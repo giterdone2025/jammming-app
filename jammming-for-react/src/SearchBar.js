@@ -2,7 +2,7 @@
 // Imports needed for the search bar's operation
 
 import React, {useState, useCallback} from 'react';
-
+import './SearchBar.css';
 /*
 *
 * The following function and callback is used for this operation:
