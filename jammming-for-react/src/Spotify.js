@@ -44,7 +44,7 @@ function handleRedirect() {
 }
 
 function handleAuthorizationResponse() {
-    if (this.status = 200) {
+    if (this.status === 200) {
         let data = JSON.parse(this.responseText);
         console.log(data);
         data = JSON.parse(this.responseText);
