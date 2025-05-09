@@ -4,7 +4,6 @@
 import React from 'react';
 import Track from "./Track";
 import './Tracklist.css';
-let key = 0;
 
 
 
@@ -15,7 +14,7 @@ function Tracklist(props) {
             {props.tracks.map(track => {
                 return(
                 <div className="track">
-                    <img src={track.image} style={{maxHeight: '60px', maxWidth: '60px'}} alt="Album Image"/>
+                    <img src={track.image} style={{maxHeight: '60px', maxWidth: '60px'}} alt="Album Cover"/>
                     <Track
                         name={track.name}
                         artist={track.artist}

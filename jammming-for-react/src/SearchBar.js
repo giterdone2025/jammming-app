@@ -22,7 +22,7 @@ function SearchBar(props) {
 
     const search = useCallback(() => {
         props.onSearch(searchInput.input);
-    }, [props.onSearch, searchInput.input]);
+    }, [props, searchInput.input]);
 
     function onChange({target}) {
         const {name, value} = target;

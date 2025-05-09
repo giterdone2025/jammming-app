@@ -48,11 +48,11 @@ function handleAuthorizationResponse() {
         let data = JSON.parse(this.responseText);
         console.log(data);
         data = JSON.parse(this.responseText);
-        if (data.access_token != undefined) {
+        if (data.access_token !== undefined) {
             accessToken = data.access_token;
             localStorage.setItem('access_token', accessToken);
         }
-        if (data.refresh_token != undefined) {
+        if (data.refresh_token !== undefined) {
             refreshToken = data.refresh_token;
             localStorage.setItem('refresh_token', refreshToken);
         }

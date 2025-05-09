@@ -48,7 +48,7 @@ function Playlist(props) {
             {props.tracks.map(track => {
                 return (
                 <div className="playlist-track">
-                    <img src={track.image} style={{maxHeight: '60px', maxWidth: '60px'}} alt="Album Image"/>
+                    <img src={track.image} style={{maxHeight: '60px', maxWidth: '60px'}} alt="Album Cover"/>
                     <Track
                         name={track.name}
                         artist={track.artist}
