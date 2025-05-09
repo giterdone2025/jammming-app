@@ -27,7 +27,7 @@ function Playlist(props) {
         (event) => {
             props.onChange(event.target.value);
         },
-        [props.onChange]
+        []
     );
 
     return(
