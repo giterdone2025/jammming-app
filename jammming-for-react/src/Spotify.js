@@ -3,7 +3,7 @@
 // used in all the functions in Spotify.js.
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
-const redirectUrl = 'https://jammming-custom-spotify-playlist.netlify.app/callback';
+const redirectUrl = 'https://jammming-custom-spotify-playlist.netlify.app';
 
 const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 let accessToken;
