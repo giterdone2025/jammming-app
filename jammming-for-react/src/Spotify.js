@@ -107,7 +107,7 @@ Spotify.getAccessToken = async (code) => {
         window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing us to grab a new access token when it expires.
     } else {
 
-        var scope = 'playlist-modify-public playlist-modify-public';
+        var scope = 'playlist-modify-public playlist-modify-private';
 
         var url = 'https://accounts.spotify.com/authorize';
         url += '?response_type=token';
